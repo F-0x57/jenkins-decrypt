@@ -52,7 +52,7 @@ def decryptOldPassword(secret, p):
   o = AES.new(secret, AES.MODE_ECB)
   x = o.decrypt(p)
   assert MAGIC in x
-  return re.findall('(.*)' + MAGIC, x)[0]
+  return re.findall(b'(.*)' + MAGIC, x)[0]
 
 def main():
   if len(sys.argv) != 4:
